@@ -1,0 +1,72 @@
+{
+  "deployed": {
+    "rinkeby": {
+      "Migrations": "0x59851C99DFdD6b564840Bf762faA04a08CC947C9",
+      "WyvernAtomicizer": "0x4b989C43bb5283B19e6cF6C6cD85b1801B1b81F4",
+      "WyvernRegistry": "0x30caa00562AD2f2B41BB4b1943d28F84832ce0D6",
+      "WyvernExchange": "0xF40D3F036528Ed87b83748306c719757f22be4fE",
+      "WyvernStatic": "0x8Ee31C795d472a1d875621f0c4706B455011aD55",
+      "TestERC20": "0x9aEEfb174928ac0c5b70949808Ec6E30ef4D439B",
+      "TestERC721": "0xa50bd876df59C35BE8fCe3FEd239DCe8C378a25f"
+    },
+    "mainnet": {
+      "Migrations": "0x2020bc01065f82f1ACfAcD93671FF339bD65f322",
+      "WyvernAtomicizer": "0x63A983B3cbb719024d4203A636118Ea899d14d2a",
+      "WyvernStatic": "0x32Ce15F191aFD85072A594f388A78D3f6Bf6a9Bf",
+      "WyvernRegistry": "0xa5409ec958C83C3f309868babACA7c86DCB077c1",
+      "WyvernExchange": "0xd7CA74fF003c90E62505D21ec7Dac36bCfD9F6f2"
+    },
+    "mumbai": {
+      "Migrations": "0x6C9497bf4700c296F5Cd7031158501410040aA8A",
+      "WyvernAtomicizer": "0x9f0B24C426327ff824f999c0507943c8bda9F674",
+      "WyvernStatic": "0x2A20127Bf55aA3fbEe8E8831CCF012d1dF470B74",
+      "WyvernRegistry": "0x2a9BbBd5db91a30C2b295Bd07b8122036236BF13",
+      "WyvernExchange": "0xE4249006405365590882D4e6b3c23746252c4d1d",
+      "StaticMarket": "0xCaB85B878296B9F00c12682b2C14c281A7DBb6a5"
+    },
+    "baobab": {
+      "Migrations": "0x294C849D78cc08457bdc3278f751789e2B2BEf5c",
+      "WyvernAtomicizer": "0xe6c0ee1209a1Dbe4A406799e9D63f1Be606CfE3E",
+      "WyvernStatic": "0xd074EbBf82806095eC784e7E00C2a44196868C4F",
+      "StaticMarket": "0xa86AF1A5bB8AF2418500AAbdacB9B7d2217F91A5",
+      "WyvernRegistry": "0x23d0a64aF6987A2d536B9c3bA72FAAf66c9D73b6",
+      "WyvernExchange": "0xDBA99cE125C6140dC4b30D48cBdDc57Bc67dc2d1"
+    },
+    "ganache": {
+      "Migrations": "0xF521f40a56aA4005d0070f5F0A1206743A99e908",
+      "WyvernAtomicizer": "0xA7aDD83c302ABBe932Fd8a6dA67C24F319858769",
+      "WyvernStatic": "0x4C6960caDdDf5D982687C3f206fa58b671BE7F2e",
+      "StaticMarket": "0x03315D0405088bEf3652dE5C56b92bbc67c6BFad",
+      "WyvernRegistry": "0x5b462Db2d43f58D7dF8115784eEc41020CB03064",
+      "WyvernExchange": "0x78101AA4a5DF6b9A9a48567e33De22b40Fa7E402",
+      "TestERC20": "0xf508C0eE555Eb7d499BACE6102dD4C0fd75EA1aE",
+      "TestERC721": "0x8Ba5edaf04372EC8480ba1C8Fac0cD6C7C4c9319",
+      "TestAuthenticatedProxy": "0xB5FD4F30d834F0946f23Df356018b2Ac3DCcaDD9",
+      "TestERC1271": "0xBF38D45FAb905E5058655aB324De85ba4b5995E0",
+      "TestERC1155": "0xd8308551B1Ee919a6A803158dCbf992e914C4507",
+      "TestExtMath": "0x278cB97b1aCA6651c5190B43C151370ef4d91528",
+      "MockTDropToken": "0x67DB1cC6df1De8D13b555436171C565efDb33e02"
+    },
+    "test": {
+      "Migrations": "0x8CdaF0CD259887258Bc13a92C0a6dA92698644C0",
+      "WyvernAtomicizer": "0x345cA3e014Aaf5dcA488057592ee47305D9B3e10",
+      "WyvernStatic": "0xf25186B5081Ff5cE73482AD761DB0eB0d25abfBF",
+      "StaticMarket": "0x8f0483125FCb9aaAEFA9209D8E9d7b9C8B9Fb90F"
+    },
+    "theta_privatenet": {
+      "Migrations": "0x19Ce1FEff967843152FB830e69f82d0Eadd1eB64",
+      "WyvernAtomicizer": "0x3526509F389696f3eFe55177936a57FbeE405797",
+      "WyvernStatic": "0xD6d179747A02F0F92ce36eE69A19601801fd377f",
+      "StaticMarket": "0xd15CBc36fbF7F9eA88795F051AE0DA7d57Afc301",
+      "WyvernRegistry": "0xa6b63544177B99b05e41b88F01067ee5bba617ed",
+      "WyvernExchange": "0x323974285E4A1A26ABAeDB45f51cA2f0827A408F",
+      "TestERC20": "0x461c1667D69a0326edcCc5AD5F4F50c26bCf3e50",
+      "TestERC721": "0xaB93D18f23c4cE5e3d5a1AE3b5Fa4a8C2529d3b5",
+      "TestAuthenticatedProxy": "0x6F2F2692eaCAE7aE234C2e234A87574232Dd5B43",
+      "TestERC1271": "0x0d7FC81a51165B2B3729B01dB132858Bb8aA3065",
+      "TestERC1155": "0xF49AFD8F2d34aa34d909Ab9b52c1D1cceefF4304",
+      "TestExtMath": "0x86595cB9683F2D440F144A39de538c5Bfa0B4242",
+      "MockTDropToken": "0x7A23531a26194668433419537dA8FC6E8066bC7d"
+    }
+  }
+}
