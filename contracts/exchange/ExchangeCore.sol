@@ -4,9 +4,9 @@
 
 */
 
-pragma solidity 0.7.5;
+pragma solidity 0.8.5;
 
-import "openzeppelin-solidity/contracts/access/Ownable.sol";
+import "../utils/Ownable.sol";
 
 import "../lib/StaticCaller.sol";
 import "../lib/ReentrancyGuarded.sol";
@@ -240,13 +240,13 @@ contract ExchangeCore is ReentrancyGuarded, StaticCaller, EIP712 {
         OwnableDelegateProxy delegateProxy = registry.proxies(maker);
 
         /* Assert existence. */
-        require(delegateProxy != OwnableDelegateProxy(0), "Delegate proxy does not exist for maker");
+        require(delegateProxy != OwnableDelegateProxy(payable(address(0))), "Delegate proxy does not exist for maker");
 
         /* Assert implementation. */
         require(delegateProxy.implementation() == registry.delegateProxyImplementation(), "Incorrect delegate proxy implementation for maker");
 
         /* Typecast. */
-        AuthenticatedProxy proxy = AuthenticatedProxy(address(delegateProxy));
+        AuthenticatedProxy proxy = AuthenticatedProxy(payable(address(delegateProxy)));
 
         /* Execute order. */
         return proxy.proxy(call.target, call.howToCall, call.data);
@@ -339,7 +339,7 @@ contract ExchangeCore is ReentrancyGuarded, StaticCaller, EIP712 {
            This is the first "asymmetric" part of order matching: if an order requires Ether, it must be the first order. */
         uint sellerValue = _chargePlatformFee(firstOrder, firstCall, secondOrder, secondCall);
         if (sellerValue > 0) { // sellerValue: the amount of Ether/TFuel sent via the tx after deducting the platform fee
-            address(uint160(firstOrder.maker)).transfer(sellerValue);
+            payable(address(uint160(firstOrder.maker))).transfer(sellerValue);
         }
 
         /* Execute first call, assert success.

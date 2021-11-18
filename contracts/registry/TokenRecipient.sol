@@ -4,9 +4,9 @@
 
 */
 
-pragma solidity 0.7.5;
+pragma solidity 0.8.5;
 
-import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
+import "../token/ERC20/ERC20.sol";
 
 /**
  * @title TokenRecipient

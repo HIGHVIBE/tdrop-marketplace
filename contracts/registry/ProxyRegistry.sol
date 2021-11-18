@@ -6,9 +6,9 @@
 
 */
 
-pragma solidity 0.7.5;
+pragma solidity 0.8.5;
 
-import "openzeppelin-solidity/contracts/access/Ownable.sol";
+import "../utils/Ownable.sol";
 
 import "./OwnableDelegateProxy.sol";
 import "./ProxyRegistryInterface.sol";
@@ -118,7 +118,7 @@ contract ProxyRegistry is Ownable, ProxyRegistryInterface {
         public
         returns (OwnableDelegateProxy proxy)
     {
-        require(proxies[user] == OwnableDelegateProxy(0), "User already has a proxy");
+        require(proxies[user] == OwnableDelegateProxy(payable(address(0))), "User already has a proxy");
         proxy = new OwnableDelegateProxy(user, delegateProxyImplementation, abi.encodeWithSignature("initialize(address,address)", user, address(this)));
         proxies[user] = proxy;
         return proxy;
@@ -133,8 +133,8 @@ contract ProxyRegistry is Ownable, ProxyRegistryInterface {
         OwnableDelegateProxy proxy = proxies[from];
 
         /* CHECKS */
-        require(OwnableDelegateProxy(msg.sender) == proxy, "Proxy transfer can only be called by the proxy");
-        require(proxies[to] == OwnableDelegateProxy(0), "Proxy transfer has existing proxy as destination");
+        require(OwnableDelegateProxy(payable(msg.sender)) == proxy, "Proxy transfer can only be called by the proxy");
+        require(proxies[to] == OwnableDelegateProxy(payable(address(0))), "Proxy transfer has existing proxy as destination");
 
         /* EFFECTS */
         delete proxies[from];
