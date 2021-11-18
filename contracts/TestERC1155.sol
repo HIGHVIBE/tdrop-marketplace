@@ -4,9 +4,9 @@
 
 */
 
-pragma solidity 0.7.5;
+pragma solidity ^0.8.5;
 
-import "openzeppelin-solidity/contracts/token/ERC1155/ERC1155.sol";
+import "./token/ERC1155/ERC1155Clean.sol";
 
 contract TestERC1155 is ERC1155("http://test/{id}.json") {
 

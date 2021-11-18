@@ -3,10 +3,9 @@
 StaticERC1155 - static calls for ERC1155 trades
 
 */
+pragma solidity ^0.8.5;
 
-pragma solidity 0.7.5;
-
-import "openzeppelin-solidity/contracts/math/SafeMath.sol";
+import "../utils/SafeMath.sol";
 
 import "../lib/ArrayUtils.sol";
 import "../registry/AuthenticatedProxy.sol";

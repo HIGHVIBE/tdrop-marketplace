@@ -266,9 +266,9 @@ library ArrayUtils {
         pure
         returns (uint)
     {
-        uint conv = uint(source) << 0x60;
+        // uint conv = source << 0x60;
         assembly {
-            mstore(index, conv)
+            mstore(index, source)
             index := add(index, 0x14)
         }
         return index;

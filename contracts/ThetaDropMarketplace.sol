@@ -1,5 +1,5 @@
 pragma abicoder v2;
-pragma solidity 0.7.5;
+pragma solidity ^0.8.5;
 
 import "./lib/ArrayUtils.sol";
 import "./lib/ExtMath.sol";
@@ -322,7 +322,7 @@ contract ThetaDropMarketplace is ExchangeCore {
     }
 
     // Assume the first order is initiated by the NFT seller, and the second order is initiated by the buyer (with either TFuel or TNT20 tokens)
-    function tradeNFT(uint[16] memory uints, bytes4[2] memory staticSelectors,
+    function tradeNFT(bytes20[16] memory uints, bytes4[2] memory staticSelectors,
         bytes memory firstExtradata, bytes memory firstCalldata, bytes memory secondExtradata, bytes memory secondCalldata,
         uint8[2] memory howToCalls, bytes32 metadata, bytes memory signatures)
         onlyWhenUnpaused
@@ -330,10 +330,10 @@ contract ThetaDropMarketplace is ExchangeCore {
         payable
     {
         return _tradeNFT(
-            Order(address(uints[0]), address(uints[1]), address(uints[2]), staticSelectors[0], firstExtradata, uints[3], uints[4], uints[5], uints[6]),
-            Call(address(uints[7]), AuthenticatedProxy.HowToCall(howToCalls[0]), firstCalldata),
-            Order(address(uints[8]), address(uints[9]), address(uints[10]), staticSelectors[1], secondExtradata, uints[11], uints[12], uints[13], uints[14]),
-            Call(address(uints[15]), AuthenticatedProxy.HowToCall(howToCalls[1]), secondCalldata),
+            Order(address(uint160(bytes20(uints[0]))), address(uint160(bytes20(uints[1]))), address(uint160(bytes20(uints[2]))), staticSelectors[0], firstExtradata, uint160(bytes20(uints[3])), uint160(bytes20(uints[4])), uint160(bytes20(uints[5])), uint160(bytes20(uints[6]))),
+            Call(address(uint160(bytes20(uints[7]))), AuthenticatedProxy.HowToCall(howToCalls[0]), firstCalldata),
+            Order(address(uint160(bytes20(uints[8]))), address(uint160(bytes20(uints[9]))), address(uint160(bytes20(uints[10]))), staticSelectors[1], secondExtradata, uint160(bytes20(uints[11])), uint160(bytes20(uints[12])), uint160(bytes20(uints[13])), uint160(bytes20(uints[14]))),
+            Call(address(uint160(bytes20(uints[15]))), AuthenticatedProxy.HowToCall(howToCalls[1]), secondCalldata),
             signatures,
             metadata
         );
