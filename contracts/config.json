@@ -1,0 +1,16 @@
+{
+  "main": "./contracts/Coin.sol",
+  "deploy": "./build/contracts/Coin.json",
+  "framework": "truffle-docker",
+  "compilers": {
+    "truffle": "v5.4.3",
+    "solc": "0.8.5",
+    "evmVersion": "istanbul"
+  },
+  "linter": "solhint",
+  "editor": {
+    "fontFamily": "Hack",
+    "fontSize": "13px",
+    "ligatures": false
+  }
+}
